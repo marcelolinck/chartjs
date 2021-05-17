@@ -1,0 +1,79 @@
+<!-- Usando a biblioteca do chartjs -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<div class="container bg-light mt-5">
+    <div class="col-12">
+        <!-- Grafico será montado dentro do myChart de acordo com as regras do script abaixo -->
+        <canvas id="myChart"></canvas>
+    </div>
+</div>
+<script>
+    var ctx = document.getElementById('myChart');
+    var myChart = new Chart(ctx, {
+        //Tipo de grafico que será exibido - line, bar, radar, doughnut, polarArea, bubble, scatter
+        type: 'bar',
+        //Valores sao inseridos dentro do data
+        data: {
+            //Dados que serao apresentados no eixo X
+            labels: ['Vermelho', 'Azul', 'Amarelo', 'Verde', 'Violeta', 'Laranjas'],
+            datasets: [{
+                //Rótulo de cada um dos valores informados abaixo em data
+                label: '#Titulo do grafico',
+                data: [12, 19, 3, 5, 2, 3],
+                //Cor para separar cada um dos elementos
+                backgroundColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+
+
+                //borda de cada uma das barras
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                    //Espessura das bordas de cada grafico
+                borderWidth: 0
+            }]
+        },
+        options: {
+            
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    
+                }
+            },
+            //Essa tag faz os ajustes para a topo da legenda do chart
+            legend: {
+                    
+                labels: {
+                    
+                    // This more specific font property overrides the global property
+                    font: {
+                        size: 16
+                    },
+                    
+                    //color:'rgba( 240, 248, 255, 1 )',
+                }
+            }
+        }
+
+    });
+</script>
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
